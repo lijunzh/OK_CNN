@@ -1,0 +1,6 @@
+#!/bin/bash
+# Prepare catalog in the Pandas HDF5 format
+
+ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ..  && pwd)"
+python ${ROOT_DIR}/src/catalog.py
+
