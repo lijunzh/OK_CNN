@@ -1,5 +1,6 @@
 # Data directory
 log/
+fig/
 catalog
 
 # VIM tmp file

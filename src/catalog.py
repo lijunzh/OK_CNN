@@ -41,7 +41,6 @@ if __name__ == '__main__':
           "file takes {} second".format(time.time() - t0))
 
     #----------------------------------------------------------------------# 
-
     # Count number of events and store in json
     import json
     log = {}
@@ -56,3 +55,17 @@ if __name__ == '__main__':
                         "log", 
                         "magnitude_distribution.json"]), 'w') as f:
         json.dump(log, f)
+
+    #----------------------------------------------------------------------#
+    # Plot event distribution on map
+    import matplotlib.pyplot as plt
+    fig, ax = plt.subplots()
+    for i in range(len(cat.index)):
+        ax.plot(cat.LON[i], cat.LAT[i], 'ko',
+               markerfacecolor='none', markersize=(cat.Magnitude[i]*3))
+
+    ax.grid(True)
+    ax.set_xlim(-97.6, -97.3)
+    ax.set_ylim(35.7, 35.9)
+    plt.show()
+
